@@ -1,143 +1,145 @@
-# ER Diagram Workshop – Submission Template
+# Experiment 1: Entity-Relationship (ER) Diagram
 
-## Objective
-To understand and apply ER modeling concepts by creating ER diagrams for real-world applications.
+## 🎯 Objective:
+To understand and apply the concepts of ER modeling by creating an ER diagram for a real-world application.
 
-## Purpose
-Gain hands-on experience in designing ER diagrams that represent database structure including entities, relationships, attributes, and constraints.
-
----
-
-# Scenario A: City Fitness Club Management
-
-**Business Context:**  
-FlexiFit Gym wants a database to manage its members, trainers, and fitness programs.
-
-**Requirements:**  
-- Members register with name, membership type, and start date.  
-- Each member can join multiple programs (Yoga, Zumba, Weight Training).  
-- Trainers assigned to programs; a program may have multiple trainers.  
-- Members may book personal training sessions with trainers.  
-- Attendance recorded for each session.  
-- Payments tracked for memberships and sessions.
-
-### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_fitness.png)
-
-### Entities and Attributes
-
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-
-### Relationships and Constraints
-
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
-
-### Assumptions
-- 
-- 
-- 
+## 📚 Purpose:
+The purpose of this workshop is to gain hands-on experience in designing ER diagrams that visually represent the structure of a database including entities, relationships, attributes, and constraints.
 
 ---
 
-# Scenario B: City Library Event & Book Lending System
+## 🧪 Choose One Scenario:
 
-**Business Context:**  
-The Central Library wants to manage book lending and cultural events.
+### 🔹 Scenario 1: University Database
+Design a database to manage students, instructors, programs, courses, and student enrollments. Include prerequisites for courses.
 
-**Requirements:**  
-- Members borrow books, with loan and return dates tracked.  
-- Each book has title, author, and category.  
-- Library organizes events; members can register.  
-- Each event has one or more speakers/authors.  
-- Rooms are booked for events and study.  
-- Overdue fines apply for late returns.
+**User Requirements:**
+- Academic programs grouped under departments.
+- Students have admission number, name, DOB, contact info.
+- Instructors with staff number, contact info, etc.
+- Courses have number, name, credits.
+- Track course enrollments by students and enrollment date.
+- Add support for prerequisites (some courses require others).
 
-### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_library.png)
+## 📝 Tasks:
+1. Identify entities, relationships, and attributes.
+2. Draw the ER diagram using any tool (draw.io, dbdiagram.io, hand-drawn and scanned).
+3. Include:
+   - Cardinality & participation constraints
+   - Prerequisites for University OR Billing for Hospital
+4. Explain:
+   - Why you chose the entities and relationships.
+   - How you modeled prerequisites or billing.
 
-### Entities and Attributes
+# ER Diagram Submission - NARAMALA KUMARTEJA
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+## Scenario Chosen:
+University 
 
-### Relationships and Constraints
+## ER Diagram:
+![UNIVERSITY DATABASE](https://github.com/user-attachments/assets/58dd2f2f-c88b-4ccc-a719-6216b47200c4)
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
 
-### Assumptions
-- 
-- 
-- 
+## Entities and Attributes:
+Student: Register no, Name, Date of Birth, Email id, Dept, Year enrolled
 
----
+Faculty: Faculty Id, Name, Department, Phone no, Email Id, Courses taught
 
-# Scenario C: Restaurant Table Reservation & Ordering
+Course: Course Id, Course name, Credits
 
-**Business Context:**  
-A popular restaurant wants to manage reservations, orders, and billing.
+Slots: Classroom no, Timings, Capacity
 
-**Requirements:**  
-- Customers can reserve tables or walk in.  
-- Each reservation includes date, time, and number of guests.  
-- Customers place food orders linked to reservations.  
-- Each order contains multiple dishes; dishes belong to categories (starter, main, dessert).  
-- Bills generated per reservation, including food and service charges.  
-- Waiters assigned to serve reservations.
+Hostel: Hostel Id, Room no, Warden
 
-### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_restaurant.png)
+Library: Location, Department
 
-### Entities and Attributes
+Clubs: Name, Technical, Cultural, Sports
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+Final Exam: GPA, Score
 
-### Relationships and Constraints
+Mode of Transport: Bus, Personal Vehicle
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+## Relationships and Constraints:
+1. Chooses (Student → Slots)
 
-### Assumptions
-- 
-- 
-- 
+Cardinality: Many-to-One (Many students can choose one slot)
 
----
+Participation: Partial (Not all students must choose slots)
 
-## Instructions for Students
+2. Enrolls (Student → Course)
 
-1. Complete **all three scenarios** (A, B, C).  
-2. Identify entities, relationships, and attributes for each.  
-3. Draw ER diagrams using **draw.io / diagrams.net** or hand-drawn & scanned.  
-4. Fill in all tables and assumptions for each scenario.  
-5. Export the completed Markdown (with diagrams) as **a single PDF**
+Cardinality: Many-to-Many (A student can enroll in many courses and a course can have many students)
+
+Participation: Partial (A student may or may not enroll)
+
+3. Attempts (Student → Course)
+
+Cardinality: Many-to-Many (A student can attempt many courses; a course can be attempted by many students)
+
+Participation: Partial
+
+4. Joins (Faculty → Faculty)
+
+Cardinality: One-to-One (Each faculty joins once)
+
+Participation: Total (All faculty must join)
+
+5. Teaches (Faculty → Course)
+
+Cardinality: One-to-Many (One faculty can teach many courses)
+
+Participation: Partial (Faculty may or may not teach courses)
+
+6. Borrows (Student → Library)
+
+Cardinality: Many-to-One (Many students borrow from one library)
+
+Participation: Partial (Not all students borrow)
+
+7. Evaluation (Student → Final Exam)
+
+Cardinality: One-to-One (One student has one final evaluation)
+
+Participation: Total (All students must have evaluation)
+
+8. Stays in (Student → Hostel)
+
+Cardinality: Many-to-One (Many students stay in one hostel)
+
+Participation: Partial (Some students may not stay in hostel)
+
+9. Travel (Student → Mode of Transport)
+
+Cardinality: One-to-One (Each student chooses one mode: Bus or Personal Vehicle)
+
+Participation: Partial (Some students may not need transport)
+...
+
+## Extension (Prerequisite):
+Prerequisite Modeling:
+
+In this ER diagram, prerequisites are implicitly handled under the "Attempts" and "Enrolls" relationships between Student and Course.
+
+If needed, a Prerequisite relationship between Course and Course can be added (self-relationship), indicating that one course is a prerequisite for another.
+
+## Design Choices:
+Entities like Student, Faculty, Course, Hostel, Library, Clubs were chosen because they are core components of a university system.
+
+Slots were added to capture the timetable and capacity management.
+
+Final Exam entity was introduced separately to focus on evaluation (GPA, Score) rather than just linking marks inside Student or Course.
+
+Mode of Transport was separated because not all students need it; it also provides flexibility to extend for new transport modes later.
+
+Relationships like Enrolls, Attempts, Teaches help maintain real-world connections between students, courses, and faculty.
+
+Participation (total/partial) and cardinality (1:1, 1:N, N:M) decisions were based on practical university scenarios (e.g., one student can enroll in many courses but must have one GPA).
+
+## RESULT
+A clear and normalized ER diagram for a university database was successfully designed.
+
+It captures major activities like enrollment, teaching, staying, traveling, evaluation, and participation in clubs.
+
+The structure supports future extensions easily (e.g., adding Prerequisite courses, Billing systems).
+
+Relationships are properly defined with correct cardinality and participation, making the database design robust and realistic.
